@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7y0aungw3q1n"]
+[gd_scene load_steps=11 format=3 uid="uid://b7y0aungw3q1n"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://u3qa8w0ay73y" path="res://Art Assets/Tilesets/water.png" id="2_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://d1swjutlyyq53" path="res://Art Assets/Tilesets/volcano_tiles_by_ekat99_deidjjj.png" id="3_6444e"]
+[ext_resource type="PackedScene" uid="uid://be2ow6sjb0bkk" path="res://Scenes/Player.tscn" id="4_7p6j4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("1_xfk5q")
@@ -1387,6 +1388,7 @@ sources/4 = SubResource("TileSetAtlasSource_chwpn")
 [node name="Level 1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(16, 16)
 tile_set = SubResource("TileSet_af3po")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 0, 1, 65535, 0, 1, 0, 0, 1, -65536, 0, 1, 131071, 0, 1, 65536, 0, 1, 131072, 0, 1, 196607, 0, 1, 262143, 0, 1, 196608, 0, 1, 262144, 0, 1, 327679, 0, 1, 393215, 0, 1, 327680, 0, 1, 393216, 0, 1, 458751, 0, 1, -65535, 65536, 22, -65534, 65536, 22, 2, 65536, 22, 1, 65536, 22, 131073, 393219, 8, 65538, 458755, 7, 327681, 393219, 7, 327682, 458755, 7, 393218, 458755, 8, 393217, 393219, 8, 196609, 327682, 1, 196610, 327682, 1, 262145, 327682, 1, 262146, 327682, 1, 196611, 327682, 1, 262147, 327682, 1, 262148, 327682, 1, 196612, 327682, 1, 196613, 327682, 1, 262149, 327682, 1, 262150, 327682, 1, 196614, 327682, 1, 131078, 327682, 1, 131077, 327682, 1, 65542, 327682, 1, 65541, 327682, 1, 65540, 327682, 1, 65539, 327682, 1, 131075, 327682, 1, 131076, 327682, 1, 327683, 131075, 5, 393219, 327683, 5, 393220, 262147, 8, 327684, 131075, 5, 327685, 131075, 5, 393221, 262147, 8, 393222, 262147, 8, 327686, 131075, 5, 393223, 262147, 8, 393224, 327683, 8, 327687, 327683, 5, 327688, 131075, 5, 262151, 262147, 8, 262152, 262147, 8, 196615, 196611, 8, 196616, 196611, 8, 131079, 262147, 8, 131080, 262147, 8, 65543, 131075, 5, 65544, 131075, 5, 8, 131075, 5, 7, 131075, 5, -65528, 131075, 5, -65529, 131075, 5, 6, 327683, 8, 5, 262147, 8, 4, 262147, 8, 3, 196611, 8, -65533, 327683, 5, -65532, 327683, 5, -65531, 327683, 5, -65530, 327683, 5, 131074, 458755, 8, 65537, 393219, 7, 458755, 196611, 5, 458756, 196611, 5, 458757, 196611, 5, 524291, 196611, 24, 524292, 196611, 24, 524293, 196611, 24, 589827, 3, 24, 589828, 3, 24, 589829, 3, 24, 655363, 3, 24, 655364, 3, 24, 655365, 3, 24, 720899, 3, 24, 720900, 3, 24, 720901, 3, 24, 786435, 3, 24, 786436, 3, 24, 786437, 3, 24)
@@ -1394,3 +1396,6 @@ layer_1/name = "Layer1"
 
 [node name="TileMap2" type="TileMap" parent="."]
 format = 2
+
+[node name="Player Character" parent="." instance=ExtResource("4_7p6j4")]
+position = Vector2(53, 9)

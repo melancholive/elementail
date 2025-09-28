@@ -11,9 +11,6 @@ config_version=5
 [application]
 
 config/name="Elementail"
+run/main_scene="uid://b7y0aungw3q1n"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[rendering]
-
-textures/canvas_textures/default_texture_filter=0

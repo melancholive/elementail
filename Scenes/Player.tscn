@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://be2ow6sjb0bkk"]
+[gd_scene load_steps=8 format=3 uid="uid://be2ow6sjb0bkk"]
 
+[ext_resource type="Script" uid="uid://cp8vypbl6ugxs" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://25f8y5q4t4et" path="res://Art Assets/Sprites/kecleon/Walk-Anim.png" id="1_rpqav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
@@ -38,7 +39,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Player Character" type="Node2D"]
+script = ExtResource("1_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-6, 8.928571)
