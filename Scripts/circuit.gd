@@ -4,11 +4,12 @@ extends Area2D
 
 func _ready():
 	_update_flamethrowers()
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("area_entered", Callable(self, "_on_area_entered"))
 
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("projectile"):
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("projectile"):
 		toggle()
+		area.queue_free()
 
 func toggle():
 	is_on = not is_on

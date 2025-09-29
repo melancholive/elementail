@@ -1,25 +1,20 @@
 extends CharacterBody2D
 
+@export var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
+@export var shoot_cooldown: float = 0.5
+var shoot_timer: float = 0.0
+
 @export var speed: float = 100.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var projectile = preload("res://Scenes/projectile.tscn")
-var last_direction: Vector2 = Vector2.ZERO
+var last_direction: Vector2 = Vector2.RIGHT
 var element: String = "neutral"
 var weakness: Dictionary = {"neutral":"none", "grass":"lava", "lava":"water", "water":"electric","electric":"grass"}
 
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		var projectile_temp = projectile.instantiate()
-		projectile_temp.global_position = global_position  
-		projectile_temp.direction = last_direction 
-		get_parent().add_child(projectile_temp)
-		
 func _ready():
 	for flamethrower in get_tree().get_nodes_in_group("flamethrower"):
 		flamethrower.connect("body_entered", Callable(self, "_on_flamethrower_entered"))
 
-
-func _process(_delta):
+func _process(delta : float):
 	var direction = Vector2.ZERO
 
 	# WASD or Arrow keys
@@ -39,9 +34,14 @@ func _process(_delta):
 
 	velocity = direction * speed
 	move_and_slide()
+	
+	if shoot_timer > 0:
+		shoot_timer -= delta
 
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_key_pressed(KEY_SPACE) and shoot_timer <= 0:
 		_play_shoot_animation(last_direction)
+		shoot_projectile()
+		shoot_timer = shoot_cooldown
 	elif direction != Vector2.ZERO:
 		_play_walk_animation(direction)
 	else:
@@ -116,3 +116,16 @@ func _on_flamethrower_entered(body: Node) -> void:
 		return
 	
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
+func shoot_projectile() -> void:
+	if not projectile_scene:
+		print("Projectile scene not set!")
+		return
+
+	var projectile = projectile_scene.instantiate()
+	projectile.global_position = global_position
+	projectile.direction = last_direction
+	
+	# Add to the current level scene
+	var current_level = get_tree().get_current_scene()
+	current_level.add_child(projectile)

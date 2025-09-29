@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b7y0aungw3q1n"]
+[gd_scene load_steps=19 format=4 uid="uid://b7y0aungw3q1n"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://u3qa8w0ay73y" path="res://Art Assets/Tilesets/water.png" id="2_7p6j4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cdjrxexff2ft3" path="res://Art Assets/Sprites/statue-removebg-preview.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://b5f7lwphjhv7j" path="res://Scenes/ice.tscn" id="8_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://dlw1fiflc28ji" path="res://Scenes/circuit.tscn" id="9_wrinw"]
+[ext_resource type="PackedScene" uid="uid://http5hp7mudr" path="res://Scenes/mirror_left.tscn" id="10_chwpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("1_xfk5q")
@@ -1515,17 +1516,22 @@ use_parent_material = true
 tile_set = SubResource("TileSet_af3po")
 
 [node name="Line2D" type="Line2D" parent="TileMap"]
-points = PackedVector2Array(-24.838781, 31, -56.632423, 31, -56.632423, -3)
+position = Vector2(-0.32388538, 0)
+scale = Vector2(1.1492947, 1)
+points = PackedVector2Array(-24.838781, 31, -55.63887, 31, -55.63813, 94, 0.021362305, 94)
 width = 2.0
 default_color = Color(0.8132577, 0.8132577, 0.81325763, 1)
 
 [node name="Line2D2" type="Line2D" parent="TileMap"]
-points = PackedVector2Array(61.600174, -27, 61.600174, -44, -56.632423, -44, -56.632423, -3)
+position = Vector2(8.27816, 3.8146973e-06)
+scale = Vector2(0.8698406, 1)
+points = PackedVector2Array(61.600174, -27, 61.600174, -44, -56.347984, -44.000004, -56.347984, 30.999996)
 width = 2.0
 default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="Player Character" parent="." instance=ExtResource("4_7p6j4")]
 position = Vector2(96, 16)
+speed = 100.0
 
 [node name="Vertical Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(78.00001, -12.000001)
@@ -1585,4 +1591,7 @@ scale = Vector2(0.8, 0.63999754)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Circuit" parent="." instance=ExtResource("9_wrinw")]
-position = Vector2(-41, 15)
+position = Vector2(16, 109.00001)
+
+[node name="MirrorLeft" parent="." instance=ExtResource("10_chwpn")]
+position = Vector2(-36, 15)
