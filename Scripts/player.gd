@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var last_direction: Vector2 = Vector2.ZERO
 var element: String = "neutral"
+var weakness: Dictionary = {"neutral":"none", "grass":"lava", "lava":"water", "water":"electric","electric":"grass"}
 
 func _process(_delta):
 	var direction = Vector2.ZERO
@@ -67,9 +68,11 @@ func _update_element() -> void:
 		var cell: Vector2i = tilemap.local_to_map(local_position)
 		var data : TileData = tilemap.get_cell_tile_data(cell)
 		
-		if data:
+		if (weakness[element] == data.get_custom_data("tile_element") ):
+			get_tree().reload_current_scene()
+		else:
 			element = data.get_custom_data("tile_element")
-		
+			
 		_match_element_color()
 
 func _match_element_color():
