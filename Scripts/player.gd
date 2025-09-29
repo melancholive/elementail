@@ -63,15 +63,14 @@ func _play_idle_animation(direction: Vector2):
 func _update_element() -> void:
 	var tilemap : TileMapLayer = get_tree().get_first_node_in_group("tilemap")
 	if tilemap:
-		var local_pos: Vector2 = tilemap.to_local(global_position)
-		var cell: Vector2i = tilemap.local_to_map(local_pos)
+		var local_position: Vector2 = tilemap.to_local(global_position)
+		var cell: Vector2i = tilemap.local_to_map(local_position)
 		var data : TileData = tilemap.get_cell_tile_data(cell)
 		
 		if data:
 			element = data.get_custom_data("tile_element")
 		
 		_match_element_color()
-
 
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
