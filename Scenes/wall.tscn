@@ -6,6 +6,7 @@
 size = Vector2(6, 23.12502)
 
 [node name="wall" type="Node2D"]
+scale = Vector2(1, 3.6399999)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 scale = Vector2(1, 0.7999991)
