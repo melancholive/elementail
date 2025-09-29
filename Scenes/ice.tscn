@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://d36olm33ujvgv" path="res://Art Assets/Tilesets/ice.png" id="1_fse5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uice2"]
-size = Vector2(35, 31)
+size = Vector2(32.5, 31)
 
-[node name="ice" type="StaticBody2D"]
+[node name="ice" type="StaticBody2D" groups=["ice_block"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fse5i")
 region_enabled = true
 region_rect = Rect2(39, 79, 34, 33)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["ice_block"]]
+position = Vector2(-0.75, 2)
 shape = SubResource("RectangleShape2D_uice2")

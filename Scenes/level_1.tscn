@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c34gkjgvu8wso" path="res://Scenes/lv1rightflame.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://cpvkgxp6cuvxm" path="res://Scenes/lv1downflame.tscn" id="6_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://cdjrxexff2ft3" path="res://Art Assets/Sprites/statue-removebg-preview.png" id="6_xrdnt"]
-[ext_resource type="PackedScene" uid="uid://b5f7lwphjhv7j" path="res://Scenes/ice.tscn" id="8_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://dlw1fiflc28ji" path="res://Scenes/circuit.tscn" id="9_wrinw"]
+[ext_resource type="PackedScene" uid="uid://clikgkr61uun6" path="res://Scenes/mirror_right.tscn" id="10_af3po"]
 [ext_resource type="PackedScene" uid="uid://http5hp7mudr" path="res://Scenes/mirror_left.tscn" id="10_chwpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
@@ -1577,16 +1577,6 @@ position = Vector2(94, 70)
 scale = Vector2(2.2799988, 1)
 zoom = Vector2(3, 3)
 
-[node name="ice" parent="." instance=ExtResource("8_xrdnt")]
-visible = false
-position = Vector2(77, 137)
-scale = Vector2(0.8, 0.63999754)
-
-[node name="ice2" parent="." instance=ExtResource("8_xrdnt")]
-visible = false
-position = Vector2(101, 137)
-scale = Vector2(0.8, 0.63999754)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Circuit" parent="." instance=ExtResource("9_wrinw")]
@@ -1594,3 +1584,6 @@ position = Vector2(16, 109.00001)
 
 [node name="MirrorLeft" parent="." instance=ExtResource("10_chwpn")]
 position = Vector2(-36, 15)
+
+[node name="MirrorRight" parent="." instance=ExtResource("10_af3po")]
+position = Vector2(-36, 111)

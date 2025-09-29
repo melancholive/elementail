@@ -6,14 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dno3j"]
 size = Vector2(151, 173)
 
-[node name="MirrorLeft" type="Node2D"]
+[node name="MirrorLeft" type="Node2D" groups=["mirror_left"]]
 script = ExtResource("1_1d6un")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_dno3j")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["mirror_left"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -0.5)

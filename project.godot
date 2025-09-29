@@ -24,6 +24,9 @@ flame=""
 player=""
 circuit=""
 grass=""
+ice_block=""
+mirror_left=""
+mirror_right=""
 
 [input]
 
