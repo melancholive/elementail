@@ -1536,9 +1536,10 @@ texture = ExtResource("6_xrdnt")
 [node name="flame" parent="Vertical Flamethrower" instance=ExtResource("6_lsmp6")]
 scale = Vector2(1.8050568, 1.8050567)
 
-[node name="Area2D" type="Area2D" parent="Vertical Flamethrower" groups=["flamethrower"]]
+[node name="Area2D" type="Area2D" parent="Vertical Flamethrower/flame" groups=["flamethrower"]]
+scale = Vector2(0.55399925, 0.55399925)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vertical Flamethrower/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vertical Flamethrower/flame/Area2D"]
 position = Vector2(-1.8156853, 148.10039)
 scale = Vector2(0.99999976, 0.9999996)
 shape = SubResource("RectangleShape2D_xrdnt")
@@ -1555,9 +1556,13 @@ rotation = -0.7878796
 scale = Vector2(1.82281, -1.8331344)
 skew = -0.033774972
 
-[node name="Area2D" type="Area2D" parent="Horizontal Flamethrower" groups=["flamethrower"]]
+[node name="Area2D" type="Area2D" parent="Horizontal Flamethrower/flame" groups=["flamethrower"]]
+position = Vector2(12.675514, 11.855988)
+rotation = -0.80261034
+scale = Vector2(0.5379978, -0.5565903)
+skew = -0.0043352842
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/flame/Area2D"]
 position = Vector2(-145.70337, 45.105625)
 scale = Vector2(0.9999999, 0.9999998)
 shape = SubResource("RectangleShape2D_wrinw")
@@ -1568,11 +1573,11 @@ scale = Vector2(2.2799988, 1)
 zoom = Vector2(3, 3)
 
 [node name="ice" parent="." instance=ExtResource("8_xrdnt")]
-position = Vector2(76, 131)
+position = Vector2(77, 137)
 scale = Vector2(0.8, 0.63999754)
 
 [node name="ice2" parent="." instance=ExtResource("8_xrdnt")]
-position = Vector2(100, 131)
+position = Vector2(101, 137)
 scale = Vector2(0.8, 0.63999754)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

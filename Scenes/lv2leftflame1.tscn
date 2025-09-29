@@ -16,7 +16,7 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="flame" type="Node2D"]
+[node name="flame" type="Node2D" groups=["flame"]]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(-8, -5.8207522e-11)
