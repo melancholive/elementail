@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blsurtwp08x7b"]
 
-[ext_resource type="Script" uid="uid://byhrl6fibuqkc" path="res://Scripts/TutorialScreen.gd" id="1_infwy"]
+[ext_resource type="Script" uid="uid://byhrl6fibuqkc" path="res://Scripts/Restart.gd" id="1_infwy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,11 +17,9 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 172.0
 grow_horizontal = 2
-text = "Elementail
+text = "Game Over
 
-Escape the Temple of Elemental Horrors
-
-You are a chameleon gifted with the power to shift between the elements."
+You were defeated... Try again?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -38,6 +36,6 @@ offset_right = 55.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Adventure"
+text = "Retry"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

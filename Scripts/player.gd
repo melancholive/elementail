@@ -67,15 +67,18 @@ func _update_element() -> void:
 		var local_position: Vector2 = tilemap.to_local(global_position)
 		var cell: Vector2i = tilemap.local_to_map(local_position)
 		var data : TileData = tilemap.get_cell_tile_data(cell)
+
 		var new_element : String = data.get_custom_data("tile_element")
 		print(new_element)
 
 		if data:
 			if (weakness[element] == new_element ):
-				get_tree().reload_current_scene()
+				#get_tree().reload_current_scene()
+				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 			else:
 				element = new_element
 			_match_element_color()
+
 
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
