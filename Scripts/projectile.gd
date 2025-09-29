@@ -39,7 +39,10 @@ func _on_area_entered(area: Area2D) -> void:
 	elif (area.is_in_group("flame") or area.is_in_group("flamethrower")) and element == "grass":
 		print("Projectile destroyed by flame")
 		queue_free()
-	elif area.is_in_group("ice_block") and element == "fire":
+	elif area.is_in_group("ice_block") and element == "lava":
 		print("Projectile destroyed ice block")
 		#area.queue_free()
+		queue_free()
+	elif area.is_in_group("grass") and element == "lava":
+		area.queue_free()
 		queue_free()

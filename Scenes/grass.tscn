@@ -12,7 +12,7 @@ scale = Vector2(0.1, 0.1)
 scale = Vector2(0.08645833, 0.1881771)
 texture = ExtResource("1_ewrq5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["grass"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.9999997, 0.9999997)
