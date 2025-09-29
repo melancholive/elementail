@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlxa"]
 size = Vector2(49, 96)
 
-[node name="Circuit" type="Node2D"]
+[node name="Circuit" type="Node2D" groups=["circuit"]]
 scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

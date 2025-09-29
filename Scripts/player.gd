@@ -87,7 +87,8 @@ func _update_element() -> void:
 			else:
 				element = new_element
 			_match_element_color()
-
+		else:
+			get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
 	

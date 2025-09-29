@@ -1573,10 +1573,12 @@ scale = Vector2(2.2799988, 1)
 zoom = Vector2(3, 3)
 
 [node name="ice" parent="." instance=ExtResource("8_xrdnt")]
+visible = false
 position = Vector2(77, 137)
 scale = Vector2(0.8, 0.63999754)
 
 [node name="ice2" parent="." instance=ExtResource("8_xrdnt")]
+visible = false
 position = Vector2(101, 137)
 scale = Vector2(0.8, 0.63999754)
 

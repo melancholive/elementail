@@ -22,6 +22,8 @@ flamethrower=""
 projectile=""
 flame=""
 player=""
+circuit=""
+grass=""
 
 [input]
 
