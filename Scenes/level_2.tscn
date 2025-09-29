@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://be2ow6sjb0bkk" path="res://Scenes/Player.tscn" id="11_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://dlw1fiflc28ji" path="res://Scenes/circuit.tscn" id="12_ait6c"]
 [ext_resource type="PackedScene" path="res://Scenes/mirror_left.tscn" id="13_vcilj"]
-[ext_resource type="PackedScene" path="res://Scenes/mirror_right.tscn" id="14_bl0du"]
+[ext_resource type="PackedScene" uid="uid://clikgkr61uun6" path="res://Scenes/mirror_right.tscn" id="14_bl0du"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
 texture = ExtResource("1_cggpd")
@@ -753,6 +753,7 @@ texture = ExtResource("3_2mgoq")
 4:21/0 = 0
 5:21/0 = 0
 6:21/0 = 0
+6:21/0/custom_data_0 = "neutral"
 7:21/0 = 0
 0:22/0 = 0
 1:22/0 = 0
