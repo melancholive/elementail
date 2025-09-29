@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7y0aungw3q1n"]
+[gd_scene load_steps=14 format=3 uid="uid://b7y0aungw3q1n"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://u3qa8w0ay73y" path="res://Art Assets/Tilesets/water.png" id="2_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://d1swjutlyyq53" path="res://Art Assets/Tilesets/volcano_tiles_by_ekat99_deidjjj.png" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://be2ow6sjb0bkk" path="res://Scenes/Player.tscn" id="4_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://c34gkjgvu8wso" path="res://Scenes/lv1rightflame.tscn" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://cpvkgxp6cuvxm" path="res://Scenes/lv1downflame.tscn" id="6_lsmp6"]
+[ext_resource type="Texture2D" uid="uid://cdjrxexff2ft3" path="res://Art Assets/Sprites/statue-removebg-preview.png" id="6_xrdnt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("1_xfk5q")
@@ -1399,3 +1402,24 @@ format = 2
 
 [node name="Player Character" parent="." instance=ExtResource("4_7p6j4")]
 position = Vector2(53, 9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(38, -12.000003)
+rotation = 3.1534443
+scale = Vector2(0.124018036, -0.12828235)
+texture = ExtResource("6_xrdnt")
+
+[node name="flame" parent="Sprite2D" instance=ExtResource("6_lsmp6")]
+scale = Vector2(1.8050568, 1.8050567)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-9, 30)
+rotation = 3.1534443
+scale = Vector2(0.124018036, -0.12828235)
+texture = ExtResource("6_xrdnt")
+
+[node name="flame1" parent="Sprite2D2" instance=ExtResource("5_6444e")]
+position = Vector2(-0.3821869, 31.179085)
+rotation = -0.7878796
+scale = Vector2(1.82281, -1.8331344)
+skew = -0.033774972
