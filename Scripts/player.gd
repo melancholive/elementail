@@ -35,7 +35,7 @@ func _process(_delta):
 		_play_idle_animation(last_direction)
 
 	_update_element()
-	print("Player element:", element)
+	#print("Player element:", element)
 
 func _play_shoot_animation(direction: Vector2):
 	if abs(direction.x) > abs(direction.y):
@@ -67,13 +67,15 @@ func _update_element() -> void:
 		var local_position: Vector2 = tilemap.to_local(global_position)
 		var cell: Vector2i = tilemap.local_to_map(local_position)
 		var data : TileData = tilemap.get_cell_tile_data(cell)
-		
-		if (weakness[element] == data.get_custom_data("tile_element") ):
-			get_tree().reload_current_scene()
-		else:
-			element = data.get_custom_data("tile_element")
-			
-		_match_element_color()
+		var new_element : String = data.get_custom_data("tile_element")
+		print(new_element)
+
+		if data:
+			if (weakness[element] == new_element ):
+				get_tree().reload_current_scene()
+			else:
+				element = new_element
+			_match_element_color()
 
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
