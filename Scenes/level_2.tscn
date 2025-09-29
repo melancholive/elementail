@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b3skt8rcj36po"]
+[gd_scene load_steps=29 format=4 uid="uid://b3skt8rcj36po"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_cggpd"]
 [ext_resource type="Texture2D" uid="uid://d36olm33ujvgv" path="res://Art Assets/Tilesets/ice.png" id="2_055b2"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://chne3vsyrmd4l" path="res://Scenes/wall.tscn" id="9_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://be2ow6sjb0bkk" path="res://Scenes/Player.tscn" id="11_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://dlw1fiflc28ji" path="res://Scenes/circuit.tscn" id="12_ait6c"]
+[ext_resource type="PackedScene" uid="uid://http5hp7mudr" path="res://Scenes/mirror_left.tscn" id="13_vcilj"]
+[ext_resource type="PackedScene" uid="uid://clikgkr61uun6" path="res://Scenes/mirror_right.tscn" id="14_bl0du"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
 texture = ExtResource("1_cggpd")
@@ -7014,16 +7016,6 @@ scale = Vector2(0.9985718, 1.0040692)
 tile_set = SubResource("TileSet_fhuy1")
 format = 2
 
-[node name="Line2D" type="Line2D" parent="TileMap"]
-points = PackedVector2Array(54.07723, 70.71226, -11.015732, 70.71226, -11.015732, 163.33534, 99.14159, 163.33534, 99.14159, 143.4164)
-width = 2.0
-default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
-
-[node name="Line2D2" type="Line2D" parent="TileMap"]
-points = PackedVector2Array(9.012872, 70.71226, 9.012872, -89.635254, 30.042904, -89.635254)
-width = 2.0
-default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
-
 [node name="walls" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAACAPf/AgACABcAAAADAPf/AgACABcAAAAEAPf/AgACABcAAAAFAPf/AgACABcAAAAGAPf/AgACABcAAAAHAPf/AgACABcAAAAIAPf/AgACABcAAAAJAPf/AgACABcAAAAKAPf/AgACABcAAAALAPf/AgACABcAAAAMAPf/AgACABcAAAANAPf/AgACABcAAAAOAPf/AgACABcAAAAPAPf/AgACABcAAAAQAPf/AgACABcAAAARAPf/AgACABcAAAASAPf/AgACABcAAAATAPf/AgACABcAAAAUAPf/AgABABUAAAAUAPj/AgABABYAAAAUAPn/AgABABYAAAAUAPr/AgABABYAAAAUAPv/AgABABYAAAAUAPz/AgABABYAAAAUAP3/AgABABYAAAAUAP7/AgABABYAAAATAPj/AgADABYAAAATAPn/AgADABYAAAATAPr/AgADABYAAAAUAP//AgABABYAAAAUAAAAAgABABYAAAAUAAEAAgABABYAAAAUAAIAAgABABYAAAATAAIAAgABABYAAAAUAAMAAgABABYAAAAUAAQAAgABABYAAAAUAAUAAgABABYAAAAUAAYAAgABABYAAAAUAAcAAgABABYAAAAUAAgAAgABABYAAAAHAPj/AgACABcAAAAGAPj/AgACABcAAAAFAPj/AgACABcAAAABAPf/AgADABUAAAATAAgAAgACABcAAAASAAgAAgACABcAAAARAAgAAgACABcAAAAQAAgAAgACABcAAAA=")
@@ -7039,16 +7031,35 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAACAPf/BQAOAIkAAAADAPf/BQAPAIkAAAAEAPf/BQATAH4AAAACAPn/BQAOAIsAAAACAPr/BQAOAIwAAAADAPj/BQAPAIoAAAADAPn/BQAPAIsAAAADAPr/BQAPAIwAAAAEAPj/BQATAH8AAAAEAPn/BQAXAIAAAAAEAPr/BQAQAIwAAAAFAPj/AgAGABUAAAAGAPj/AgAGABUAAAAFAAcABQAOAIsAAAAGAAcABQAPAIsAAAAGAAgABQAPAIwAAAAHAAcABQAXAIAAAAAHAAgABQAQAIwAAAAIAAcABQAUAIAAAAAJAAcABQAPAIsAAAAJAAgABQAPAIwAAAAKAAcABQAXAIAAAAAKAAgABQAQAIwAAAAFAAUABQAOAIkAAAAFAAgABQAOAIwAAAAGAAUABQAPAIkAAAAGAAYABQAPAIoAAAAHAAUABQATAH4AAAAHAAYABQATAH8AAAAIAAUABQAOAIkAAAAIAAgABQAOAIwAAAAJAAUABQAPAIkAAAAJAAYABQAPAIoAAAAKAAUABQATAH4AAAAKAAYABQATAH8AAAARAAIAAgAAAAkAAAASAAIAAgABAAkAAAATAAIAAgACAAkAAAARAAMAAgAAAAoAAAASAAMAAgABAAoAAAATAAMAAgACAAoAAAAGAPv/AgAAAA8AAAAFAPv/AgAAAA8AAAAHAPv/AgAAAA8AAAAIAPv/AgAAAA8AAAAJAPv/AgAAAA8AAAAKAPv/AgAAAA8AAAALAPv/AgAAAA8AAAAMAPv/AgAAAA8AAAANAPv/AgAAAA8AAAAOAPv/AgAAAA8AAAAPAPv/AgAAAA8AAAAQAPv/AgAAAA8AAAAUAAkAAgAFAAYAAAATAAkAAgAFAAYAAAASAAkAAgAFAAYAAAARAAkAAgAFAAYAAAAQAAkAAgAFAAYAAAAPAAkAAgAFAAYAAAAOAAkAAgAFAAYAAAANAAkAAgAFAAYAAAAMAAkAAgAFAAYAAAALAAkAAgAFAAYAAAAKAAkAAgAFAAYAAAAJAAkAAgAFAAYAAAAIAAkAAgAFAAYAAAAHAAkAAgAFAAYAAAAGAAkAAgAFAAYAAAAFAAkAAgAFAAYAAAAEAAkAAgAFAAYAAAADAAkAAgAFAAYAAAACAAkAAgAFAAYAAAABAAYAAgADABYAAAABAAcAAgADABYAAAABAAgAAgADABYAAAABAAkAAgADABcAAAA=")
 tile_set = SubResource("TileSet_fhuy1")
 
+[node name="Line2D3" type="Line2D" parent="TileMap"]
+scale = Vector2(0.99999994, 0.99999994)
+points = PackedVector2Array(54.07723, 70.71226, -11.015732, 70.71226, -11.015732, 163.33534, 99.14159, 163.33534, 99.14159, 143.4164)
+width = 2.0
+default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="Line2D2" type="Line2D" parent="TileMap"]
+scale = Vector2(0.99999994, 0.99999994)
+points = PackedVector2Array(9.012872, 70.71226, 9.012872, -89.635254, 30.042904, -89.635254)
+width = 2.0
+default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="Line2D" type="Line2D" parent="TileMap"]
+scale = Vector2(1.0014302, 0.99594724)
+points = PackedVector2Array(17, -90, 17, -148, 350, -148, 350, -57, 334, -57)
+width = 2.0
+default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
 [node name="Horizontal Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(333, -63)
 scale = Vector2(0.11409779, 0.11409779)
 texture = ExtResource("7_2mgoq")
 
 [node name="flame" parent="Horizontal Flamethrower" instance=ExtResource("8_uhnj4")]
-position = Vector2(-70.11521, 35.057644)
-scale = Vector2(13.321905, 1.4023061)
+position = Vector2(-175.28815, 35.057644)
+scale = Vector2(48.37955, 1.4023061)
 
 [node name="Area2D" type="Area2D" parent="Horizontal Flamethrower" groups=["flamethrower"]]
+scale = Vector2(2.3872108, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/Area2D"]
 position = Vector2(-271.69678, 39.74878)
@@ -7082,7 +7093,11 @@ zoom = Vector2(2, 2)
 [node name="Circuit" parent="." instance=ExtResource("12_ait6c")]
 position = Vector2(55, 71)
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(17, -90, 17, -148, 350, -148, 350, -57, 334, -57)
-width = 2.0
-default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+[node name="Inside Circuit" parent="." instance=ExtResource("12_ait6c")]
+position = Vector2(208, -50)
+
+[node name="MirrorLeft" parent="." instance=ExtResource("13_vcilj")]
+position = Vector2(57, 0)
+
+[node name="MirrorRight" parent="." instance=ExtResource("14_bl0du")]
+position = Vector2(296, 0)

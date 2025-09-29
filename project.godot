@@ -21,6 +21,7 @@ tilemap=""
 flamethrower=""
 projectile=""
 flame=""
+player=""
 
 [input]
 

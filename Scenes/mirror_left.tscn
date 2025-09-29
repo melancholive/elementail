@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://http5hp7mudr"]
+
+[ext_resource type="Script" uid="uid://cx6p6a074t132" path="res://Scripts/mirror_left.gd" id="1_1d6un"]
+[ext_resource type="Texture2D" uid="uid://dmm2png4xup4x" path="res://Art Assets/Sprites/mirror-left.png" id="1_dno3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dno3j"]
+size = Vector2(151, 173)
+
+[node name="MirrorLeft" type="Node2D"]
+script = ExtResource("1_1d6un")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_dno3j")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.103799894, 0.09144444)
+shape = SubResource("RectangleShape2D_dno3j")
