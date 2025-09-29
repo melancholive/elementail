@@ -6,6 +6,10 @@ var last_direction: Vector2 = Vector2.ZERO
 var element: String = "neutral"
 var weakness: Dictionary = {"neutral":"none", "grass":"lava", "lava":"water", "water":"electric","electric":"grass"}
 
+func _ready():
+	for flamethrower in get_tree().get_nodes_in_group("flamethrower"):
+		flamethrower.connect("body_entered", Callable(self, "_on_flamethrower_entered"))
+
 func _process(_delta):
 	var direction = Vector2.ZERO
 
@@ -66,19 +70,14 @@ func _update_element() -> void:
 	if tilemap:
 		var local_position: Vector2 = tilemap.to_local(global_position)
 		var cell: Vector2i = tilemap.local_to_map(local_position)
-		var data : TileData = tilemap.get_cell_tile_data(cell)
+		var new_element : String = tilemap.get_cell_tile_data(cell).get_custom_data("tile_element")
 
-		var new_element : String = data.get_custom_data("tile_element")
-		print(new_element)
-
-		if data:
+		if new_element:
 			if (weakness[element] == new_element ):
-				#get_tree().reload_current_scene()
 				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 			else:
 				element = new_element
 			_match_element_color()
-
 
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
@@ -96,3 +95,14 @@ func _match_element_color():
 			base_color = Color(1, 1, 1, 1)
 	
 	anim.self_modulate = base_color
+	
+func _on_flamethrower_entered(body: Node) -> void:
+	# only react if it's the player
+	if body != self:
+		return
+	
+	# if the player element is "lava", ignore
+	if element == "lava":
+		return
+	
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

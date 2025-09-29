@@ -1516,37 +1516,37 @@ tile_set = SubResource("TileSet_af3po")
 [node name="Player Character" parent="." instance=ExtResource("4_7p6j4")]
 position = Vector2(96, 16)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Vertical Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(78.00001, -12.000001)
 rotation = -3.129741
 scale = Vector2(0.124018036, -0.12828235)
 texture = ExtResource("6_xrdnt")
 
-[node name="flame" parent="Sprite2D" instance=ExtResource("6_lsmp6")]
+[node name="flame" parent="Vertical Flamethrower" instance=ExtResource("6_lsmp6")]
 scale = Vector2(1.8050568, 1.8050567)
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="Vertical Flamethrower" groups=["flamethrower"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vertical Flamethrower/Area2D"]
 position = Vector2(-1.8156853, 148.10039)
 scale = Vector2(0.99999976, 0.9999996)
 shape = SubResource("RectangleShape2D_xrdnt")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Horizontal Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(-9, 30)
 rotation = 3.1534443
 scale = Vector2(0.124018036, -0.12828235)
 texture = ExtResource("6_xrdnt")
 
-[node name="flame1" parent="Sprite2D2" instance=ExtResource("5_6444e")]
+[node name="flame" parent="Horizontal Flamethrower" instance=ExtResource("5_6444e")]
 position = Vector2(-0.3821869, 31.179085)
 rotation = -0.7878796
 scale = Vector2(1.82281, -1.8331344)
 skew = -0.033774972
 
-[node name="Area2D" type="Area2D" parent="Sprite2D2"]
+[node name="Area2D" type="Area2D" parent="Horizontal Flamethrower" groups=["flamethrower"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/Area2D"]
 position = Vector2(-145.70337, 45.105625)
 scale = Vector2(0.9999999, 0.9999998)
 shape = SubResource("RectangleShape2D_wrinw")
