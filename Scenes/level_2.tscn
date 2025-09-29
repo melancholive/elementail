@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b3skt8rcj36po"]
+[gd_scene load_steps=26 format=3 uid="uid://b3skt8rcj36po"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_cggpd"]
 [ext_resource type="Texture2D" uid="uid://d36olm33ujvgv" path="res://Art Assets/Tilesets/ice.png" id="2_055b2"]
@@ -6926,6 +6926,9 @@ sources/3 = SubResource("TileSetAtlasSource_q0ycs")
 sources/4 = SubResource("TileSetAtlasSource_hj5x7")
 sources/5 = SubResource("TileSetAtlasSource_yvrk7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v2y"]
+size = Vector2(535.8645, 97.02634)
+
 [sub_resource type="Animation" id="Animation_ait6c"]
 length = 0.001
 tracks/0/type = "value"
@@ -7012,14 +7015,20 @@ layer_1/tile_data = PackedInt32Array(65534, 131074, 1342177302, 65535, 131074, 1
 layer_2/name = "Layer5"
 layer_2/tile_data = PackedInt32Array(-589822, 917509, 137, -589821, 983045, 137, -589820, 1245189, 126, -458750, 917509, 139, -393214, 917509, 140, -524285, 983045, 138, -458749, 983045, 139, -393213, 983045, 140, -524284, 1245189, 127, -458748, 1507333, 128, -393212, 1048581, 140, -524283, 393218, 21, -524282, 393218, 21, 458757, 917509, 139, 458758, 983045, 139, 524294, 983045, 140, 458759, 1507333, 128, 524295, 1048581, 140, 458760, 1310725, 128, 458761, 983045, 139, 524297, 983045, 140, 458762, 1507333, 128, 524298, 1048581, 140, 327685, 917509, 137, 524293, 917509, 140, 327686, 983045, 137, 393222, 983045, 138, 327687, 1245189, 126, 393223, 1245189, 127, 327688, 917509, 137, 524296, 917509, 140, 327689, 983045, 137, 393225, 983045, 138, 327690, 1245189, 126, 393226, 1245189, 127, 131089, 2, 9, 131090, 65538, 9, 131091, 131074, 9, 196625, 2, 10, 196626, 65538, 10, 196627, 131074, 10, -327674, 2, 15, -327675, 2, 15, -327673, 2, 15, -327672, 2, 15, -327671, 2, 15, -327670, 2, 15, -327669, 2, 15, -327668, 2, 15, -327667, 2, 15, -327666, 2, 15, -327665, 2, 15, -327664, 2, 15, 589844, 327682, 6, 589843, 327682, 6, 589842, 327682, 6, 589841, 327682, 6, 589840, 327682, 6, 589839, 327682, 6, 589838, 327682, 6, 589837, 327682, 6, 589836, 327682, 6, 589835, 327682, 6, 589834, 327682, 6, 589833, 327682, 6, 589832, 327682, 6, 589831, 327682, 6, 589830, 327682, 6, 589829, 327682, 6, 589828, 327682, 6, 589827, 327682, 6, 589826, 327682, 6, 393217, 196610, 22, 458753, 196610, 22, 524289, 196610, 22, 589825, 196610, 23)
 
-[node name="StatueRemovebgPreview" type="Sprite2D" parent="."]
+[node name="Horizontal Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(333, -63)
 scale = Vector2(0.11409779, 0.11409779)
 texture = ExtResource("7_2mgoq")
 
-[node name="flame" parent="StatueRemovebgPreview" instance=ExtResource("8_uhnj4")]
+[node name="flame" parent="Horizontal Flamethrower" instance=ExtResource("8_uhnj4")]
 position = Vector2(-70.11521, 35.057644)
 scale = Vector2(13.321905, 1.4023061)
+
+[node name="Area2D" type="Area2D" parent="Horizontal Flamethrower" groups=["flamethrower"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/Area2D"]
+position = Vector2(-271.69678, 39.74878)
+shape = SubResource("RectangleShape2D_t7v2y")
 
 [node name="fakedoor" parent="." instance=ExtResource("9_42uki")]
 position = Vector2(208, 84)
