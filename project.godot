@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 tilemap=""
 flamethrower=""
+projectile=""
 flame=""
 
 [input]

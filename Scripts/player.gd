@@ -2,13 +2,22 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var projectile = preload("res://Scenes/projectile.tscn")
 var last_direction: Vector2 = Vector2.ZERO
 var element: String = "neutral"
 var weakness: Dictionary = {"neutral":"none", "grass":"lava", "lava":"water", "water":"electric","electric":"grass"}
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		var projectile_temp = projectile.instantiate()
+		projectile_temp.global_position = global_position  
+		projectile_temp.direction = last_direction 
+		get_parent().add_child(projectile_temp)
+		
 func _ready():
 	for flamethrower in get_tree().get_nodes_in_group("flamethrower"):
 		flamethrower.connect("body_entered", Callable(self, "_on_flamethrower_entered"))
+
 
 func _process(_delta):
 	var direction = Vector2.ZERO
