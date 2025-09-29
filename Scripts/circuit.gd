@@ -37,7 +37,11 @@ func _update_flamethrowers():
 			print(" - No CPUParticles2D found under", flame_node.name)
 
 	# toggle colliders
-	for flame in get_tree().get_nodes_in_group("flamethrower"):
-		var collider = flame.get_node_or_null("CollisionShape2D")
+	for flamethrower in get_tree().get_nodes_in_group("flamethrower"):
+		# Toggle the collider shape
+		var collider = flamethrower.get_node_or_null("CollisionShape2D")
 		if collider:
 			collider.disabled = not is_on
+
+		# Disable the Area2D itself so it stops detecting bodies
+		flamethrower.monitoring = is_on

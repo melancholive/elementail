@@ -1531,7 +1531,6 @@ default_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="Player Character" parent="." instance=ExtResource("4_7p6j4")]
 position = Vector2(96, 16)
-speed = 100.0
 
 [node name="Vertical Flamethrower" type="Sprite2D" parent="."]
 position = Vector2(78.00001, -12.000001)
