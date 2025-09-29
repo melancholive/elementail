@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed: float = 100.0
 
@@ -19,4 +19,5 @@ func _process(delta):
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 
-	position += direction * speed * delta
+	velocity = direction * speed
+	move_and_slide()

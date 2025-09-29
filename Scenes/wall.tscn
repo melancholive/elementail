@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://chne3vsyrmd4l"]
+
+[ext_resource type="Texture2D" uid="uid://d1swjutlyyq53" path="res://Art Assets/Tilesets/volcano_tiles_by_ekat99_deidjjj.png" id="1_d155t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d155t"]
+size = Vector2(6, 23.12502)
+
+[node name="wall" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+scale = Vector2(1, 0.7999991)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, -12)
+scale = Vector2(1, 1.3206823)
+texture = ExtResource("1_d155t")
+region_enabled = true
+region_rect = Rect2(56, 355, 8, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-1, -11.56251)
+shape = SubResource("RectangleShape2D_d155t")
