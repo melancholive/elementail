@@ -81,14 +81,17 @@ func _update_element() -> void:
 		var cell: Vector2i = tilemap.local_to_map(local_position)
 		var new_element : String = tilemap.get_cell_tile_data(cell).get_custom_data("tile_element")
 
-		if new_element:
+		if new_element and new_element != "game_end":
 			if (weakness[element] == new_element ):
 				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 			else:
 				element = new_element
 			_match_element_color()
 		else:
-			get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+			if (new_element == "game_end"):
+				get_tree().change_scene_to_file("res://Scenes/StartScreen.tscn")
+			else:
+				get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
 func _match_element_color():
 	var base_color = Color(1, 1, 1, 1)  # keep brightness
 	
