@@ -27,6 +27,7 @@ grass=""
 ice_block=""
 mirror_left=""
 mirror_right=""
+electric_dependent=""
 
 [input]
 

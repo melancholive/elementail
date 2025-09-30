@@ -32,17 +32,15 @@ func _on_area_entered(area: Area2D) -> void:
 		direction = Vector2(direction.y, -direction.x)
 		print("Projectile hit mirror_right, new direction: ", direction)
 	elif area.is_in_group("circuit") and element == "grass":
-		if area.has_method("toggle"):
+		if area.get_is_on():
 			area.toggle()
-			print("Circuit toggled by projectile")
-		queue_free()
+			queue_free()
+	elif area.is_in_group("circuit") and element == "lava":
+		if not area.get_is_on():
+			area.toggle()
+			queue_free()
 	elif (area.is_in_group("flame") or area.is_in_group("flamethrower")) and element == "grass":
 		print("Projectile destroyed by flame")
 		queue_free()
 	elif area.is_in_group("ice_block") and element == "lava":
-		print("Projectile destroyed ice block")
-		#area.queue_free()
-		queue_free()
-	elif area.is_in_group("grass") and element == "lava":
-		area.queue_free()
 		queue_free()

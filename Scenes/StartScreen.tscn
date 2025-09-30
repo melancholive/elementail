@@ -15,13 +15,13 @@ script = ExtResource("1_d4r0f")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 172.0
+offset_top = 195.0
+offset_bottom = 367.0
 grow_horizontal = 2
-text = "Elementail
+text = "ELEMENTAIL
 
-Escape the Temple of Elemental Horrors
-
-You are a chameleon gifted with the power to shift between the elements."
+You are a chameleon gifted with the power to shift between the elements.
+Escape the Temple of Elemental Horrors using your powers [space]."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -32,12 +32,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -55.5
-offset_top = -15.5
-offset_right = 55.5
-offset_bottom = 15.5
+offset_left = -65.0
+offset_top = 30.0
+offset_right = 66.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Adventure"
+text = "Begin your Escape"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
