@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b3skt8rcj36po"]
+[gd_scene load_steps=32 format=4 uid="uid://b3skt8rcj36po"]
 
 [ext_resource type="Texture2D" uid="uid://db783q4c8snls" path="res://Art Assets/Tilesets/grass.png" id="1_cggpd"]
 [ext_resource type="Texture2D" uid="uid://d36olm33ujvgv" path="res://Art Assets/Tilesets/ice.png" id="2_055b2"]
@@ -7967,6 +7967,9 @@ sources/0 = SubResource("TileSetAtlasSource_fhuy1")
 sources/1 = SubResource("TileSetAtlasSource_i6dbo")
 sources/2 = SubResource("TileSetAtlasSource_e2piv")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0ycs"]
+size = Vector2(237.62701, 115.173004)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v2y"]
 size = Vector2(13.419312, 16.465374)
 
@@ -8072,8 +8075,9 @@ position = Vector2(8.764404, -43.822083)
 scale = Vector2(2.3872108, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizontal Flamethrower/flame/Area2D"]
-position = Vector2(-115.6958, 39.74878)
-shape = SubResource("RectangleShape2D_t7v2y")
+position = Vector2(-108.81348, 47.586517)
+scale = Vector2(1, 1.1489708)
+shape = SubResource("RectangleShape2D_q0ycs")
 
 [node name="Area2D" type="Area2D" parent="." groups=["electric_dependent", "flamethrower"]]
 position = Vector2(857.00006, -66)
@@ -8116,4 +8120,4 @@ visible = false
 position = Vector2(268, 1)
 
 [node name="ice" parent="." instance=ExtResource("15_q0ycs")]
-position = Vector2(209, 102)
+position = Vector2(209, 109)
